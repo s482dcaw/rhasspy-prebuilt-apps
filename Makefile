@@ -1,8 +1,16 @@
 .PHONY: build dist
 
-PLATFORMS ?= linux/amd64,linux/arm/v7,linux/arm64,linux/arm/v6
+all: amd64 arm64 armv7
 
-all: build
+amd64:
+	docker buildx build . --platform linux/amd64 --output type=local,dest=dist
 
-build:
-	docker buildx build . --platform $(PLATFORMS) --output type=local,dest=dist
+arm64:
+	docker buildx build . --platform linux/arm64 --output type=local,dest=dist
+
+armv7:
+	docker buildx build . --platform linux/arm/v7 --output type=local,dest=dist
+
+clean:
+	docker system prune -a
+

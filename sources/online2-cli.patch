@@ -1,0 +1,12 @@
+--- online2bin/Makefile	2022-01-15 15:31:04.000000000 +0000
++++ /Makefile	2022-01-23 00:20:19.777838984 +0000
+@@ -13,7 +13,8 @@
+      online2-wav-nnet2-am-compute  online2-wav-nnet2-latgen-threaded \
+      online2-wav-nnet3-latgen-faster online2-wav-nnet3-latgen-grammar \
+      online2-tcp-nnet3-decode-faster online2-wav-nnet3-latgen-incremental \
+-     online2-wav-nnet3-wake-word-decoder-faster
++     online2-wav-nnet3-wake-word-decoder-faster \
++     online2-cli-nnet3-decode-faster-confidence
+ 
+ # ARCH is defined in kaldi.mk
+ ifeq ($(ARCH), WASM)
